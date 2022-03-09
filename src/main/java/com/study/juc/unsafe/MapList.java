@@ -18,6 +18,7 @@ public class MapList {
          * 默认等价于new HashMap<>(16,0.75)
          */
 //        Map<String, String> map = new HashMap<>();
+//        Map<String, String> map =Collections.synchronizedMap(new HashMap<>());
         Map<String,String> map= new ConcurrentHashMap<>( );
         for (int i = 0; i < 30; i++) {
 

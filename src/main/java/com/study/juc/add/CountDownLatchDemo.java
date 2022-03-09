@@ -14,7 +14,7 @@ public class CountDownLatchDemo {
                 countDownLatch.countDown(); //计数器减一
             }, String.valueOf(i)).start();
         }
-        countDownLatch.await();;//等待计数器归0
+        countDownLatch.await();//等待计数器归0
         System.out.println("关闭");
     }
 }

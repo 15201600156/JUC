@@ -20,10 +20,10 @@ public class CASReferenceDemo {
              } catch (InterruptedException e) {
                  e.printStackTrace();
              }
-             System.out.println(atomicStampedReference.compareAndSet(1, 2, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
+             System.out.println("A=>"+atomicStampedReference.compareAndSet(1, 2, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
              System.out.println("a2=>"+atomicStampedReference.getStamp());
-             Lock lock=new ReentrantLock(false);
-             System.out.println(atomicStampedReference.compareAndSet(2, 1, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
+
+             System.out.println("A=>"+atomicStampedReference.compareAndSet(2, 1, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
              System.out.println("a2=>"+atomicStampedReference.getStamp());
 
          },"A线程").start();
@@ -36,11 +36,8 @@ public class CASReferenceDemo {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(atomicStampedReference.compareAndSet(1, 6, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
+            System.out.println("B=>"+atomicStampedReference.compareAndSet(1, 6, atomicStampedReference.getStamp(), atomicStampedReference.getStamp() + 1));
             System.out.println("b2=>"+atomicStampedReference.getStamp());
-
-
-
         },"A线程").start();
 
     }
